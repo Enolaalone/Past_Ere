@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Integration</title>
+    <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+</head>
+<body>
+
+    <!-- 定义空的div用于Blockly -->
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    
+    <!-- 配置Blockly工作空间和工具箱 -->
+    <script>
+        // 定义工具箱结构
+        const toolbox = {
+            "kind": "flyoutToolbox",
+            "contents": [
+                {
+                    "kind": "block",
+                    "type": "controls_if"
+                },
+                {
+                    "kind": "block",
+                    "type": "controls_repeat_ext"
+                },
+                {
+                    "kind": "block",
+                    "type": "logic_compare"
+                },
+                {
+                    "kind": "block",
+                    "type": "math_number"
+                },
+                {
+                    "kind": "block",
+                    "type": "math_arithmetic"
+                },
+                {
+                    "kind": "block",
+                    "type": "text"
+                },
+                {
+                    "kind": "block",
+                    "type": "text_print"
+                },
+            ]
+        };
+
+        // 注入Blockly到定义的div中
+        const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
+
+
+    </script>
+</body>
+</html>
